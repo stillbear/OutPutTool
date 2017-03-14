@@ -18,6 +18,7 @@ public:
 	~Connecter();
 	int connect();
 	int select(const char * sql);
+	MYSQL_RES * getResult();
 private:
 	const char *host;
 	const char *user;
@@ -25,6 +26,5 @@ private:
 	const char *db;
 	unsigned int port;
 	MYSQL myCont;
-	MYSQL_ROW sql_row;
 };
 

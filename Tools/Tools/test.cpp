@@ -2,6 +2,7 @@
 #include <mysql.h>
 #include <string>
 #include <iostream>
+#include "Connecter.h"
 
 
 using namespace std;
@@ -14,25 +15,23 @@ int main()
 	const char db[] = "sakila";
 	unsigned int port = 3306;
 
-	MYSQL myCont;
+	Connecter con = Connecter(host, user, pswd, db, port);
+
 	MYSQL_RES *result;
 	MYSQL_ROW sql_row;
 	int res;
-	mysql_init(&myCont);
-	if (mysql_real_connect(&myCont, host, user, pswd, db, port, NULL, 0))
+	if (con.connect())
 	{
-		mysql_query(&myCont, "SET NAMES GBK"); //设置编码格式
-		res = mysql_query(&myCont, "select * from city");//查询
+		res=con.select("select * from city");
 		if (!res)
 		{
-			result = mysql_store_result(&myCont);
+			result = con.getResult();
 			if (result)
 			{
-				cout << "CITY_ID	"<< "CITY_NAME	"<< "COUNTRY_ID	" << "LAST_UPDATE	"<< endl;
+				cout << "CITY_ID	" << "CITY_NAME	" << "COUNTRY_ID	" << "LAST_UPDATE	" << endl;
 				while (sql_row = mysql_fetch_row(result))//获取具体的数据
 				{
-					
-					cout << sql_row[0] << " " << sql_row[1] << " " << sql_row[2] << " " << sql_row[3]  << " " << endl;
+					cout << sql_row[0] << " " << sql_row[1] << " " << sql_row[2] << " " << sql_row[3] << " " << endl;
 				}
 			}
 		}
@@ -44,11 +43,9 @@ int main()
 	else
 	{
 		cout << "connect failed!" << endl;
-		system("pause");
 	}
 	if (result != NULL)
 		mysql_free_result(result);
-	mysql_close(&myCont);
 	system("pause");
 	return 0;
 
