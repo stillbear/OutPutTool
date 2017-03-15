@@ -20,14 +20,14 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Connecter.h" />
-    <ClInclude Include="readFile.h" />
-    <ClInclude Include="writeFile.h" />
+    <ClInclude Include="Reader.h" />
+    <ClInclude Include="Writer.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Connecter.cpp" />
-    <ClCompile Include="readFile.cpp" />
+    <ClCompile Include="Reader.cpp" />
     <ClCompile Include="test.cpp" />
-    <ClCompile Include="writeFile.cpp" />
+    <ClCompile Include="Writer.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{30337D3F-44BE-43C5-A1F7-EB99BC6E16E7}</ProjectGuid>

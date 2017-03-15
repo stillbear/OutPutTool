@@ -15,27 +15,27 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="readFile.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="writeFile.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="Connecter.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Writer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Reader.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="readFile.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="writeFile.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="test.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="Connecter.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Writer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Reader.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
